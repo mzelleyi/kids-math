@@ -1,6 +1,6 @@
 {
-  "name": "app-kit",
-  "namespace": "appkit",
+  "name": "kids-math",
+  "namespace": "kids-math",
   "version": "0.0.0",
   "main": "index.js",
   "directories": {
