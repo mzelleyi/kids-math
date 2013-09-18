@@ -1,6 +1,6 @@
 $num1-color: purple
-$num2-color: blue
-$answer-color: red
+$num2-color: #b8860b
+$answer-color: blue
 
 $equation-font-size: 32px
 
@@ -19,23 +19,23 @@ h2
   font-size: $equation-font-size
   font-weight: bold
 
-#answer
-  width: 80px
-  font-size: 22px
-  font-weight: bold
-
 #answer-range
   position: relative
-  //.is-answered-state
-  //  width: 0
-  button.is-answered-state
-    width: $ball-width
+  margin-bottom: 30px
+  button.is-disappeared
+    width: 0
     margin-right: 0
     background-color: white
-  .is-selected
-    button.is-answered-state
-      background-color: red
-      width: 40px
+    font-size: 0px
+//button.is-answered-state.is-selected
+//  background-color: red
+//  width: 40px
+
+//#answer
+//  width: 80px
+//  font-size: 22px
+//  font-weight: bold
+
 
 button
   width: 40px
@@ -43,18 +43,27 @@ button
   margin-right: 5px
   font-weight: bold
   color: white
-  background: red
+  background: $answer-color
   border-radius: 8px
   border: none
   &:hover
-    background: darkred
+    background: #4169e1
 
 
 #visualization
-  margin: 30px 0 15px 0
   font-size: $equation-font-size
   font-weight: bold
   vertical-align: center
+
+#space1
+  height: 6px
+  &.is-answered-state
+    height: 30px
+
+#space2
+  height: 30px
+  &.is-answered-state
+    height: 6px
 
 .num
   &.color1
@@ -62,20 +71,10 @@ button
   &.color2
     color: $num2-color
 
-#answer-num
-  padding-bottom: 15px
-  vertical-align: center
-  margin-left: 10px
-  color: red
-  font-weight: bold
-  font-size: 40px
-
-#answer-visual
-  margin-bottom: 40px
 
 .ball
   display: inline-block
-  background: red
+  background: $answer-color
   border-radius: $ball-radius
   width: $ball-width
   height: calc( 2 * #{$ball-radius})
@@ -88,32 +87,52 @@ button
     color: white
     font-weight: bold
     text-align: center
-    font-size: 22px
+    width: 0
+    font-size: 1px
+    &.is-answered-state
+      font-size: 22px
+      width: $ball-width
 
-#msg
-  display: inline
-  color: red
-  font-weight: bold
-  font-size: 46px
-  &.is-correct-state
-    color: green
 
-#go-again
-  width: 150px
-  background: green
-  &:hover
-    background: #006400
+$transition-time: 1000ms
 
-#try-again
-  width: 150px
-  background: red
-  &:hover
-    background: darkred
+span#visualization-operation
+  display: inline-block
+  &.is-answered-state
+    width: 0
 
-$transition-time: 500ms
+#buttons
+  #msg
+    display: inline
+    color: white
+    font-weight: bold
+    font-size: 36px
+    &.is-answered-state
+      color: red
+      &.is-correct-state
+        color: green
+  button
+    width: 150px
+    background: white
+    font-size: 24px
+    &.is-answered-state
+      background: red
+      &:hover
+        background: darkred
+      &.is-correct-state
+        background: green
+        &:hover
+          background: #006400
 
-.is-answered-state
-  -moz-transition: width $transition-time, height $transition-time, background-color $transition-time
-  -webkit-transition: width $transition-time, height $transition-time, background-color $transition-time
-  -o-transition: width $transition-time, height $transition-time, background-color $transition-time
-  transition: width $transition-time, height $transition-time, background-color $transition-time
+
+
+.is-answered-state, .is-disappeared
+  -moz-transition: width $transition-time, height $transition-time, background-color 0, font-size $transition-time
+  -webkit-transition: width $transition-time, height $transition-time, background-color 0, font-size $transition-time
+  -o-transition: width $transition-time, height $transition-time, background-color 0, font-size $transition-time
+  transition: width $transition-time, height $transition-time, background-color 0, font-size $transition-time
+//.is-disappeared
+//  -moz-transition: width $transition-time, height $transition-time, background-color 0, font-size $transition-time
+//  -webkit-transition: width $transition-time, height $transition-time, background-color 0, font-size $transition-time
+//  -o-transition: width $transition-time, height $transition-time, background-color 0, font-size $transition-time
+//  transition: width $transition-time, height $transition-time, background-color 0, font-size $transition-time

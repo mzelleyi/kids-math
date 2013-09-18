@@ -6,26 +6,35 @@
   span.num.color2=num2
   | &nbsp;= ?
 
+#space1{bindAttr class='isAnsweredState'}
+  | &nbsp;
+
 #visualization
   each num1Array
     .ball.color1
+  span#visualization-operation{bindAttr class='isAnsweredState'}
+    | &nbsp;
+    if showOperationInVisualization
+      operation
+    | &nbsp;
   each num2Array
     .ball.color2
 
-if isAnsweredState
-  #answer-visual{bindAttr class="isAnsweredState"}
-    each num in answerArray
-      .ball.answer=num
+/if isAnsweredState
+/  #answer-visual{bindAttr class="isAnsweredState"}
+/    each num in answerArray
+/      .ball.answer{bindAttr class="isAnsweredState"}=num
+#space2{bindAttr class='isAnsweredState'}
+  | &nbsp;
 
 #answer-range
+  each num in answerArray
+    div{bindAttr class=":ball :answer isAnsweredState"}=num
   each num in answerRange
-    button{action 'verifyAnswer' num }=num
+    answer-button action='verifyAnswer' num=num answer=answer isAnsweredState=isAnsweredState
 
-
-  #buttons
-    #msg{bindAttr class="isCorrectState"}=message
-    | &nbsp;&nbsp;&nbsp;
-    if isCorrectState
-      button#go-again{action 'goAgain' answer } Go Again
-    else
-      button#try-again{action 'tryAgain' answer } Try Again
+#buttons
+  #msg{bindAttr class="isAnsweredState isCorrectState"}=message
+  | &nbsp;&nbsp;&nbsp;
+  button{bindAttr class="isAnsweredState isCorrectState"}{action 'reset'}
+    = buttonLabel
