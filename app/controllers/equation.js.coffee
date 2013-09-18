@@ -62,7 +62,7 @@ EquationController = Em.Controller.extend
         else
           @set('message', "Too low!")
     reset: ->
-      @generateEquation() if not @get('isCorrectState')
+      @generateEquation() if @get('isCorrectState')
       @set('isAnsweredState', false)
     #end actions
 
