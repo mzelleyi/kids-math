@@ -6,10 +6,6 @@
   span.num.color2=num2
   | &nbsp;= ?
 
-#answer-range
-  each num in answerRange
-    button{action 'verifyAnswer' num }=num
-
 #visualization
   each num1Array
     .ball.color1
@@ -18,9 +14,13 @@
 
 if isAnsweredState
   #answer-visual{bindAttr class="isAnsweredState"}
-    times answer
-      .ball.answer
-    #answer-num=answer
+    each num in answerArray
+      .ball.answer=num
+
+#answer-range
+  each num in answerRange
+    button{action 'verifyAnswer' num }=num
+
 
   #buttons
     #msg{bindAttr class="isCorrectState"}=message

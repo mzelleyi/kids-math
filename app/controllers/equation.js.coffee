@@ -8,22 +8,16 @@ EquationController = Em.Controller.extend
   nums: []
   num1: (-> @get('nums').objectAt(0)).property('nums')
   num2: (-> @get('nums').objectAt(1)).property('nums')
-  num1Array: (->
-    return [] if @get('num1')==0
-    i for i in [0..@get('num1')-1]
-  ).property('num1')
-  num2Array: (->
-    return [] if @get('num2')==0
-    i for i in [0..@get('num2')-1]
-  ).property('num2')
+  num1Array: (->  @_numArray(@get 'num1')).property('num1')
+  num2Array: (->  @_numArray(@get 'num2')).property('num2')
   operation: '+'
   lowerBound: 0
   upperBound: 5
   expanse: (-> @get('upperBound') - @get('lowerBound')).property("lowerBound","upperBound")
   answer: 0
+  answerArray: (-> [1..@get('answer')]).property('answer')
   answerRange: (->
-    for i in [@get('lowerBound')..2*@get('expanse')]
-      i
+    [@get('lowerBound')..2*@get('expanse')]
   ).property("lowerBound", "upperBound", "expanse")
   equationText: (->
     num1 = @get('nums').objectAt(0)
@@ -36,6 +30,9 @@ EquationController = Em.Controller.extend
     Math.floor(Math.random() * @get('expanse')) + @get('lowerBound')
   generateEquation: ->
     @set 'nums', [@genInt(), @genInt()]
+  _numArray: (num, start=0) ->
+    return [] if num <= start
+    [start+1..num+start]
   message: "I'm a msg"
   actions:
     verifyAnswer: (answer)->
