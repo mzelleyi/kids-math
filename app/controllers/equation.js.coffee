@@ -1,9 +1,7 @@
 EquationController = Em.Controller.extend
   isAnsweredState: false
-  #isAnswerHidden: Em.computed.not("isAnsweredState")
   isCorrectState: false
   correctAnswer: (->
-    console.log("eqText: #{@get('equationText')}")
     eval @get('equationText')
   ).property('equationText')
   nums: []
@@ -24,9 +22,7 @@ EquationController = Em.Controller.extend
   equationText: (->
     num1 = @get('nums').objectAt(0)
     num2 = @get('nums').objectAt(1)
-    text = "#{num1}#{@get('operation')}#{num2}"
-    console.log("eqT: #{text}")
-    text
+    "#{num1}#{@get('operation')}#{num2}"
   ).property("nums", "operation")
   genInt: ->
     Math.floor(Math.random() * @get('expanse')) + @get('lowerBound')
@@ -51,7 +47,6 @@ EquationController = Em.Controller.extend
       @set('answer', answer)
       @set('isAnsweredState', true)
       correct = @get('correctAnswer')
-      console.log "eq controrer verifyAnswer: #{answer}"
       if (0+answer == correct)
         @set('message', "Right!!")
         @set('isCorrectState', true)

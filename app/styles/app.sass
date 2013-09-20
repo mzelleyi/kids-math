@@ -94,7 +94,6 @@ button
       width: $ball-width
 
 
-$transition-time: 1000ms
 
 span#visualization-operation
   display: inline-block
@@ -125,12 +124,13 @@ span#visualization-operation
           background: #006400
 
 
+$transition-time: 1000ms
 
 .is-answered-state, .is-disappeared
+  transition: width $transition-time, height $transition-time, background-color 0, font-size $transition-time
   -moz-transition: width $transition-time, height $transition-time, background-color 0, font-size $transition-time
   -webkit-transition: width $transition-time, height $transition-time, background-color 0, font-size $transition-time
   -o-transition: width $transition-time, height $transition-time, background-color 0, font-size $transition-time
-  transition: width $transition-time, height $transition-time, background-color 0, font-size $transition-time
 //.is-disappeared
 //  -moz-transition: width $transition-time, height $transition-time, background-color 0, font-size $transition-time
 //  -webkit-transition: width $transition-time, height $transition-time, background-color 0, font-size $transition-time
