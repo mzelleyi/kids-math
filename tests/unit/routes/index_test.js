@@ -1,5 +1,5 @@
-import Index from 'appkit/routes/index';
-import App from 'appkit/app';
+import Index from 'kids-math/routes/index';
+import App from 'kids-math/app';
 
 var route;
 
@@ -14,6 +14,3 @@ test("it exists", function(){
   ok(route instanceof Ember.Route);
 });
 
-test("#model", function(){
-  deepEqual(route.model(), ['red', 'yellow', 'blue']);
-});

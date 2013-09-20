@@ -1,5 +1,5 @@
-import Index from 'appkit/routes/index';
-import App from 'appkit/app';
+import Index from 'kids-math/routes/index';
+import App from 'kids-math/app';
 
 module("Acceptances - Index", {
   setup: function(){
@@ -8,13 +8,10 @@ module("Acceptances - Index", {
 });
 
 test("index renders", function(){
-  expect(3);
+  expect(1);
 
   visit('/').then(function(){
-    ok(exists("h2:contains('Welcome to Ember.js')"));
+    ok(exists("h2:contains('Hello Julius')"));
 
-    var list = find("ul li");
-    equal(list.length, 3);
-    equal(list.text(), "redyellowblue");
   });
 });
