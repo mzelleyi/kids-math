@@ -7,10 +7,9 @@ module.exports = {
       root: 'app/templates/',
       dependencies: {
         jquery: 'vendor/jquery/jquery.js',
-        ember: 'vendor/ember/index.js',
+        ember: 'vendor/ember/ember.js',
         handlebars: 'vendor/handlebars/handlebars.js',
-        //you must put emblem.js here (or in another dir and specify appropriately)
-        emblem: 'vendor/handlebars/emblem.js',
+        emblem: 'vendor/emblem/emblem.js'
       }
     }
   }
