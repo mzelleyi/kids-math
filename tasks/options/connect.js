@@ -5,7 +5,7 @@ var lockFile = require('lockfile'),
 module.exports = {
   server: {
     options: {
-      port: process.env.PORT || 8000,
+      port: process.env.PORT || 7777,
       hostname: '0.0.0.0',
       base: 'tmp/public',
       // Use this option to have the catch-all return a different
@@ -16,7 +16,7 @@ module.exports = {
   },
   dist: {
     options: {
-      port: process.env.PORT || 8000,
+      port: process.env.PORT || 7777,
       hostname: '0.0.0.0',
       base: 'dist/',
       middleware: middleware
