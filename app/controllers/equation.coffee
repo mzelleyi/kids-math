@@ -12,12 +12,12 @@ EquationController = Em.Controller.extend
   operation: '+'
   showOperationInVisualization: (-> @get('num1') and @get('num2')).property('num1', 'num2')
   lowerBound: 0
-  upperBound: 5
+  upperBound: 6
   expanse: (-> @get('upperBound') - @get('lowerBound')).property("lowerBound","upperBound")
   answer: null
   answerArray: (-> @_numArray(@get 'answer') ).property('answer')
   answerRange: (->
-    [@get('lowerBound')..2*@get('expanse')]
+    [@get('lowerBound')..2*(@get('expanse')-1)]
   ).property("lowerBound", "upperBound", "expanse")
   equationText: (->
     num1 = @get('nums').objectAt(0)
