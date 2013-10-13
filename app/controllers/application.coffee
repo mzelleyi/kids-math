@@ -6,11 +6,5 @@ ApplicationController = Em.Controller.extend
                       "Hello #{name}!"
     greetingArray.join(" ")
   ).property("learnerNames")
-  isShowingSettings: false
-  actions:
-    showSettings: ->
-      console.log 'showSets'
-      @set 'isShowingSettings', true
-      console.log "showSets #{@get 'isShowingSettings'}"
 
 `export default ApplicationController`

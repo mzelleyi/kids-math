@@ -1,4 +1,6 @@
+render 'settings'
 #content
   h2=greeting
   hr
+
   outlet

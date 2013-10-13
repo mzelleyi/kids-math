@@ -1,2 +1,2 @@
-button{bindAttr class="isDisappeared"}=num
+button#answer{bindAttr class="isDisappeared"}=num
 

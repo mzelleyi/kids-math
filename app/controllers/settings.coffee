@@ -1,10 +1,8 @@
-MyController = Em.Controller.extend
-#  needs: ['']
-#  comp1: Em.computed.alias("")
-#  comp2: (->
-#  ).property("")
-#  actions:
-#    showSettings: ->
-#    console.log 'showSets'
+SettingsController = Em.Controller.extend
+  isShowingSettings: false
+  isHidingSettings: Em.computed.not('isShowingSettings')
+  actions:
+    showSettings: -> @set 'isShowingSettings', true
+    close: -> @set 'isShowingSettings', false
 
-`export default MyController`
+`export default SettingsController`
