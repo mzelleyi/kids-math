@@ -20,5 +20,7 @@ App.initializer({
 
 import hbsInitializer from 'kids-math/initializers/handlebars';
 Ember.Application.initializer(hbsInitializer);
+import debugInit from "kids-math/initializers/debug";
+Ember.Application.initializer(debugInit);
 
 export default App;
