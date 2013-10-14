@@ -3889,7 +3889,6 @@ DS.Model = Ember.Object.extend(Ember.Evented, {
   */
   save: function() {
     var resolver = Ember.RSVP.defer();
-
     this.get('store').scheduleSave(this, resolver);
     this._inFlightAttributes = this._attributes;
     this._attributes = {};
