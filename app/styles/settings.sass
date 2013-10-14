@@ -4,7 +4,7 @@ $settings-padding: 8px
   position: absolute
   top:  0
   left: -$settings-width
-  background: yellow
+  background: #fafad2
   width: $settings-width
   height: 100%
   z-index: 10
@@ -15,9 +15,11 @@ $settings-padding: 8px
 
 #settings-inset
   margin: 8px
-
+  padding: 8px
 $transition-time: 400ms
 
+label
+  font-weight: bold
 
 .is-showing-settings, .is-hiding-settings
   transition: left $transition-time
@@ -46,10 +48,15 @@ $transition-time: 400ms
   margin-bottom: 5px
 
 button#close-settings
-  background: inherit
-  color: blue
+  background: purple
+  color: white
   font-weight: normal
   font-size: 14px
   &:hover
     color: white
-    background: purple
+    background: blue
+
+input
+  border-radius: 6px
+  padding: 4px
+  font-size: 16px

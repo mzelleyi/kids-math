@@ -1,6 +1,5 @@
-Config = DS.Model.extend
-  kidsName: ["Isabela","Julius"]
+Obj = DS.Model.extend
+  kidsNames: DS.attr()
 
 
-
-`export default Config`
+`export default Obj`

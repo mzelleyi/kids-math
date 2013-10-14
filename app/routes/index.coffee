@@ -1,6 +1,12 @@
 IndexRoute = Ember.Route.extend
-  setupController: (controller, model)->
+  model: (params, queryParams, transition) ->
+    @store.findAll "settings"
+
+  setupController: (controller, model, queryParams) ->
     console.log "ixroute"
+    model = if (model.get('length') > 0) then model.objectAt(0) else @store.createRecord('settings')
+    this.controllerFor('settings').set('model', model)
+    this.controllerFor('settings').set('kidsNames', model.get('kidsNames'))
     this.controllerFor('equation').generateEquation()
 
 `export default IndexRoute`

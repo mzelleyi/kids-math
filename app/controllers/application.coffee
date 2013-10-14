@@ -1,10 +1,12 @@
 ApplicationController = Em.Controller.extend
-  needs: ['config']
-  kidsNames: Em.computed.alias("controllers.config.kidsNames")
+  needs: ['settings']
+  kidsNames: Em.computed.alias("controllers.settings.model.kidsNames")
   greeting: (->
-    greetingArray = for name in @get('kidsNames')
-                      "Hello #{name}!"
-    greetingArray.join(" ")
-  ).property("learnerNames")
+    if @get('kidsNames')
+      names = @get('kidsNames').split(',')
+      greetingArray = for name in names
+                        "Hello #{name}!"
+      greetingArray.join(" ")
+  ).property("kidsNames")
 
 `export default ApplicationController`

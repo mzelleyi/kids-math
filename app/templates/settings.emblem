@@ -5,5 +5,11 @@
 
 #settings{bindAttr class='isShowingSettings isHidingSettings'}
   #settings-inset
-    button#close-settings{action 'close'} Close
-    h1 Settings
+    h3 Settings
+    button#close-settings{action 'save'} Save
+    button#close-settings{action 'close'} Cancel
+    br
+    br
+    label Kids Names
+    br
+    Em.TextField valueBinding="kidsNames" placeholder="name 1,name 2" autofocus='true'
